@@ -1,12 +1,12 @@
 pipeline {
         agent any
 stages {
-     stage('BUILD') {
+     stage('Build') {
           steps {
             echo "hallow world"
           }
      }
-     stage('Deploy') {
+     stage('Test') {
           steps { 
                  sh '''
                   pwd
@@ -15,6 +15,20 @@ stages {
                   '''
 
           }
+
+     }
+     stage('Deploy') {
+        steps {
+            sh '''
+            pwd
+            mkdir tata
+            cd tata
+            touch venk.txt
+            chmod 777  venk.txt
+            echo " i got this " > venk.txt
+            ls -lrt
+            '''
+        }
 
      }
 
