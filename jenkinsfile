@@ -2,7 +2,7 @@ pipeline {
       agent non 
        stages {
         stage('Build') {
-          agent slave_1
+          agent 'slave_1'
             steps {
                 echo 'Hello World'
             }
