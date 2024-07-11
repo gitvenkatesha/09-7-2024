@@ -15,7 +15,9 @@ stages {
                }
         }
     stage('Test') {
-        agent any
+        agent{
+            label 'Slave_2'
+        }
            
         
         steps {
