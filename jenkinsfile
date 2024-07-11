@@ -1,45 +1,11 @@
-pipeline {
-     agent none 
-        
-            
-        
-stages {
-     stage('Build') {
-          agent{
-              label 'Slave_1'
+
+pipeline{
+     agent non 
+     stages{
+         stage{
+          steps{
+              sh sleep 10
           }
-          steps {
-            echo "hallow world"
-          }
+         }
      }
-     stage('Test') {
-          agent any
-          steps { 
-                 sh '''
-                  pwd
-
-                  echo "this is 2nd stage build"
-                  '''
-
-          }
-
-     }
-     stage('Deploy') {
-          agent any
-        steps {
-          
-            sh '''
-            pwd
-            mkdir tata
-            cd tata
-            touch venk.txt
-            chmod 777  venk.txt
-            echo " i got this " > venk.txt
-            ls -lrt
-            '''
-        }
-
-     }
-
-} 
 }
