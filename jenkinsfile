@@ -9,14 +9,9 @@ stages {
 
               ls -lrt 
               '''
-
-
-        
+               }
         }
-
-
-    }
-    stage('Build') {
+    stage('Test') {
         steps {
         echo  "gta test gold fgeeo"
 
