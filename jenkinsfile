@@ -16,7 +16,7 @@ stages {
         }
     stage('Test') {
         agent{
-            label 'Slave_2'
+            label 'Slave_1'
         }
            
         
