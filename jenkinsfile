@@ -1,12 +1,14 @@
 pipeline {
-      agent any
+      agent non 
        stages {
         stage('Build') {
+          agent slave_1
             steps {
                 echo 'Hello World'
             }
         }
         stage('Deploy') {
+               agent any 
             steps {
 
 
