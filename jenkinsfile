@@ -1,12 +1,12 @@
 pipeline {
-     agent any 
+     agent none 
         
             
         
 stages {
      stage('Build') {
           agent{
-              label Slave_1
+              label 'Slave_1'
           }
           steps {
             echo "hallow world"
