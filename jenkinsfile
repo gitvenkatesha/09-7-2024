@@ -1,7 +1,10 @@
 pipeline {
 
     agent any 
-env TEST = "ls -lrt"
+    environment {
+        TEST = 'ls -lrt'
+    } 
+
     stages {
         stage {
             steps {
