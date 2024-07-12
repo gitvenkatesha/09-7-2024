@@ -1,18 +1,13 @@
 pipeline {
 
-agent any 
+    agent any 
+env TEST = "ls -lrt"
+    stages {
+        stage {
+            steps {
 
-environment { TEST = 'ls -lrt'
-
-}
-stages('Build') {
-
-    stage {
-        step {
-           echo  "$TEST"
-
+                echo ''
+            }
         }
     }
-}
-
 }
