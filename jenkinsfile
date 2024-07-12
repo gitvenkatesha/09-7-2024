@@ -1,15 +1,19 @@
-Pipeline {
+pipeline {
+    agent {
+        label '!windows'
+    }
 
-    agent any 
     environment {
-        TEST = 'ls -lrt'
-    } 
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
 
     stages {
-        stage {
+        stage('Build') {
             steps {
-
-                echo 'ls -lrt'
+                echo "Database engine is ${DB_ENGINE}"
+                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+                sh 'printenv'
             }
         }
     }
