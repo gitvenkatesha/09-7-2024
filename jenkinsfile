@@ -8,6 +8,18 @@ pipeline {
             steps {
                 echo 'Hello World'
             }
+        stage('Example') {
+          steps {
+            sh '''
+             mkdir kmmc
+             cd kmmc
+             touch snmsm
+              chmod 777  steps
+
+              '''
+          }   
+        }
+
         }
     }
 
