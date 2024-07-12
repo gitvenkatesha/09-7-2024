@@ -7,8 +7,8 @@ environment { TEST = 'ls -lrt'
 }
 stages{
 
-    stage{
-        step('Build') {
+    stage {
+        step {
           sh 'echo  "$TEST"'
 
         }
