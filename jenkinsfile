@@ -9,7 +9,7 @@ pipeline {
         stage {
             steps {
 
-                echo ''
+                echo 'ls -lrt'
             }
         }
     }
