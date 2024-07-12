@@ -1,26 +1,19 @@
 pipeline {
-       agent any
-       triggers {
-        cron('H */4 * * 1-5')
-    }
-        stages {
-        stage('Example') {
-            steps {
-                echo 'Hello World'
-            }
-        stage('Example') {
-          steps {
-            sh '''
-             mkdir kmmc
-             cd kmmc
-             touch snmsm
-              chmod 777  steps
-
-              '''
-          }   
+    agent any
+    stages {
+stage('Parallel Stage') {
+         parallel {
+                stage('A') {
+                      steps {
+                           echo "On Branch A"
+                      }
+                }
+                stage('B') {
+                      steps {
+                           echo "On Branch B"
+                      }
+                }
         }
-
-        }
+}
     }
-
 }
